@@ -1,0 +1,44 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#f2f2ff"/>
+
+  <!-- Outer Ring -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#d6d6f5" stroke-width="10"/>
+
+  <!-- Abstract Shape (Main Body) -->
+  <path d="
+    M100,180 
+    C170,90 340,90 410,180 
+    L410,340 
+    C340,430 170,430 100,340 
+    Z"
+    fill="url(#mainGradient)"
+    stroke="none"
+  />
+
+  <!-- Inner Gloss Highlight -->
+  <path d="
+    M130,200 
+    C200,130 310,130 380,200 
+    L380,310 
+    C310,380 200,380 130,310 
+    Z"
+    fill="url(#highlightGradient)"
+    opacity="0.2"
+  />
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <!-- Main Gradient Fill -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a00e0"/>
+      <stop offset="100%" stop-color="#8e2de2"/>
+    </linearGradient>
+
+    <!-- Gloss Highlight Gradient -->
+    <linearGradient id="highlightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
