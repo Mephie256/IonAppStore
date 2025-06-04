@@ -1,5 +1,8 @@
 // Modern APK Store JavaScript
 
+
+//Basing App Functioning
+// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize AOS animation library with enhanced settings
   AOS.init({
