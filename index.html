@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APK Store</title>
+  <title>Ion App Store 2.0 - Advanced App Discovery</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -11,45 +11,299 @@
 </head>
 <body>
   <header class="site-header">
+    <nav class="top-nav">
+      <div class="nav-brand">
+        <span class="logo">Ion Store</span>
+        <span class="version-badge">2.0</span>
+      </div>
+      <div class="nav-controls">
+        <button class="theme-toggle" title="Toggle Dark Mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="info-btn" title="About">
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </div>
+    </nav>
     <div class="site-header-content">
-      <h1 class="animate__animated animate__fadeInDown">Ion App Store</h1>
-      <p class="animate__animated animate__fadeInUp">Download your favorite apps instantly</p>
+      <h1 class="animate__animated animate__fadeInDown">Ion App Store 2.0</h1>
+      <p class="animate__animated animate__fadeInUp">Advanced app discovery made simple - Download your favorite apps instantly</p>
     </div>
   </header>
 
   <div class="search-container">
-    <div class="search-box">
-      <input type="text" id="app-search" placeholder="Search for apps..." class="animate__animated animate__fadeIn">
-      <button><i class="fas fa-search"></i></button>
+    <div class="search-box-wrapper">
+      <div class="search-box">
+        <input type="text" id="app-search" placeholder="Search for apps, categories, or features..." class="animate__animated animate__fadeIn" autocomplete="off">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+        <button class="clear-search" style="display: none;"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="search-suggestions" style="display: none;"></div>
+      <div class="search-history" style="display: none;">
+        <div class="search-history-header">
+          <span>Recent Searches</span>
+          <button class="clear-history">Clear</button>
+        </div>
+        <div class="search-history-items"></div>
+      </div>
     </div>
-    <div class="category-filters">
-      <button class="category-btn active" data-category="all">All</button>
-      <button class="category-btn" data-category="games">Games</button>
-      <button class="category-btn" data-category="social">Social</button>
-      <button class="category-btn" data-category="productivity">Productivity</button>
-      <button class="category-btn" data-category="entertainment">Entertainment</button>
-      <button class="category-btn" data-category="christian">Christian</button>
+    
+    <div class="filters-section">
+      <div class="category-filters">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="games">Games</button>
+        <button class="category-btn" data-category="social">Social</button>
+        <button class="category-btn" data-category="productivity">Productivity</button>
+        <button class="category-btn" data-category="entertainment">Entertainment</button>
+        <button class="category-btn" data-category="christian">Christian</button>
+      </div>
+      
+      <div class="advanced-filters">
+        <div class="filter-group">
+          <select id="sort-by" class="filter-select">
+            <option value="featured">Featured</option>
+            <option value="rating">Highest Rated</option>
+            <option value="downloads">Most Downloaded</option>
+            <option value="newest">Newest</option>
+            <option value="size-small">Smallest Size</option>
+            <option value="alphabetical">A-Z</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <select id="filter-rating" class="filter-select">
+            <option value="all">All Ratings</option>
+            <option value="4+">4+ Stars</option>
+            <option value="3+">3+ Stars</option>
+            <option value="2+">2+ Stars</option>
+          </select>
+        </div>
+        
+        <div class="filter-group">
+          <select id="filter-size" class="filter-select">
+            <option value="all">All Sizes</option>
+            <option value="small">Under 20MB</option>
+            <option value="medium">20-50MB</option>
+            <option value="large">Over 50MB</option>
+          </select>
+        </div>
+      </div>
     </div>
   </div>
 
   <main class="app-container">
-    <section class="app-grid">
-      <!-- App Card 1 -->
-      <div class="app-card" data-aos="zoom-in" data-category="entertainment">
-        <div class="app-card-header">
-          <img src="https://i.ibb.co/SwhW7ZBK/Untitled-design.png" alt="App One" class="app-icon">
-          <div class="app-info">
-            <h3>IonFlix</h3>
-            <div class="app-category">Entertainment</div>
+    <!-- What's New Section -->
+    <section class="whats-new-section">
+      <div class="section-header">
+        <h2><i class="fas fa-sparkles"></i> What's New in 2.0</h2>
+        <p>Latest updates and improvements</p>
+      </div>
+      <div class="whats-new-content">
+        <div class="update-card featured-update" data-aos="fade-up">
+          <div class="update-header">
+            <div class="update-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="update-info">
+              <h3>Ion App Store 2.0</h3>
+              <span class="update-version">Version 2.0.0</span>
+              <span class="update-date">Released Today</span>
+            </div>
+            <div class="update-badge new">NEW</div>
+          </div>
+          <div class="update-content">
+            <h4><i class="fas fa-star"></i> Major Update - Complete Redesign!</h4>
+            <ul class="update-features">
+              <li><i class="fas fa-search"></i> Enhanced search with auto-suggestions</li>
+              <li><i class="fas fa-moon"></i> Dark mode support</li>
+              <li><i class="fas fa-mobile-alt"></i> Improved mobile experience</li>
+              <li><i class="fas fa-filter"></i> Advanced filtering options</li>
+              <li><i class="fas fa-download"></i> Download progress tracking</li>
+              <li><i class="fas fa-share-alt"></i> Easy app sharing</li>
+            </ul>
           </div>
         </div>
+        
+        <div class="mini-updates">
+          <div class="mini-update" data-aos="fade-up" data-aos-delay="100">
+            <div class="mini-update-icon">
+              <i class="fas fa-bug"></i>
+            </div>
+            <div class="mini-update-content">
+              <h4>Bug Fixes</h4>
+              <p>Fixed search issues and improved performance</p>
+              <span class="mini-update-version">v1.9.1</span>
+            </div>
+          </div>
+          
+          <div class="mini-update" data-aos="fade-up" data-aos-delay="200">
+            <div class="mini-update-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="mini-update-content">
+              <h4>Security Updates</h4>
+              <p>Enhanced security and stability improvements</p>
+              <span class="mini-update-version">v1.9.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Apps Section -->
+    <section class="featured-section" style="display: none;">
+      <div class="section-header">
+        <h2><i class="fas fa-star"></i> Featured Apps</h2>
+        <p>Hand-picked apps for the best experience</p>
+      </div>
+      <div class="featured-carousel">
+        <div class="featured-app-large" data-aos="fade-right">
+          <!-- Featured app will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Apps Section -->
+    <section class="trending-section">
+      <div class="section-header">
+        <h2><i class="fas fa-fire"></i> Trending Now</h2>
+        <p>Most popular downloads this week</p>
+      </div>
+      <div class="trending-apps-row">
+        <!-- Trending apps will be populated by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Search Results Info -->
+    <div class="search-results-info" style="display: none;">
+      <span class="results-count">Showing 0 apps</span>
+      <button class="clear-all-filters" style="display: none;">Clear All Filters</button>
+    </div>
+
+    <!-- Main Apps Grid -->
+    <section class="apps-section">
+      <div class="section-header main-grid-header">
+        <h2>All Apps</h2>
+        <div class="view-options">
+          <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+          <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+        </div>
+      </div>
+      
+      <div class="app-grid" id="apps-grid">
+      <!-- Enhanced App Card 1 -->
+      <div class="app-card enhanced" data-aos="zoom-in" data-category="entertainment" data-app-id="ionflix-beta" data-rating="4.5" data-size="21" data-downloads="15420">
+        <div class="app-card-header">
+          <img src="https://i.ibb.co/239N1gV4/Beta.jpg" alt="IonFlix Beta" class="app-icon" loading="lazy">
+          <div class="app-info">
+            <h3>IonFlix - Beta</h3>
+            <div class="app-category">Entertainment</div>
+            <div class="app-badges">
+              <span class="badge new">New</span>
+              <span class="badge featured">Featured</span>
+            </div>
+          </div>
+          <div class="app-actions">
+            <button class="action-btn share" title="Share App">
+              <i class="fas fa-share-alt"></i>
+            </button>
+            <button class="action-btn info" title="App Info">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="app-screenshots" style="display: none;">
+          <div class="screenshots-container">
+            <img src="https://via.placeholder.com/300x500/4361ee/white?text=Screenshot+1" alt="Screenshot 1" loading="lazy">
+            <img src="https://via.placeholder.com/300x500/7209b7/white?text=Screenshot+2" alt="Screenshot 2" loading="lazy">
+            <img src="https://via.placeholder.com/300x500/4cc9f0/white?text=Screenshot+3" alt="Screenshot 3" loading="lazy">
+          </div>
+        </div>
+        
         <div class="app-card-body">
           <p class="app-description">Enjoy unlimited streaming of premium movies, TV shows, and exclusive content. IonFlix brings entertainment to your fingertips with a sleek interface and personalized recommendations.</p>
+          
+          <div class="app-features">
+            <span class="feature-tag"><i class="fas fa-video"></i> HD Streaming</span>
+            <span class="feature-tag"><i class="fas fa-download"></i> Offline Mode</span>
+            <span class="feature-tag"><i class="fas fa-mobile-alt"></i> Mobile Optimized</span>
+          </div>
+          
           <div class="app-meta">
             <div class="app-rating" data-rating="4.5"></div>
-            <div class="app-size">95 MB</div>
+            <div class="app-size">21 MB</div>
+            <div class="app-downloads">15.4K downloads</div>
           </div>
-          <a href="https://drive.google.com/file/d/1CaNKvCwZcEJULiHo_CgrCC2JB7fP8uXr/view?usp=drive_link" download class="btn">Download</a>
+          
+          <div class="app-actions-bar">
+            <a href="https://drive.google.com/file/d/15fu-sKMXmzli_8LYQys8EfzwTQfoqSUU/view?usp=drive_link" class="btn download-btn" data-app="ionflix-beta">
+              <i class="fas fa-download"></i> Download
+            </a>
+            <button class="btn-secondary details-btn" data-app="ionflix-beta">
+              <i class="fas fa-info-circle"></i> Details
+            </button>
+          </div>
+          
+          <div class="download-progress" style="display: none;">
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="progress-text">Preparing download...</span>
+          </div>
+        </div>
+      </div>
+
+            <div class="app-card enhanced" data-aos="zoom-in" data-category="entertainment" data-app-id="ionflix-lite" data-rating="4.5" data-size="34" data-downloads="12850">
+        <div class="app-card-header">
+          <img src="https://i.ibb.co/1tZztxWz/Betal.png" alt="IonFlix Lite" class="app-icon" loading="lazy">
+          <div class="app-info">
+            <h3>IonFlix - Lite</h3>
+            <div class="app-category">Entertainment</div>
+            <div class="app-badges">
+              <span class="badge trending">Trending</span>
+            </div>
+          </div>
+          <div class="app-actions">
+            <button class="action-btn share" title="Share App">
+              <i class="fas fa-share-alt"></i>
+            </button>
+            <button class="action-btn info" title="App Info">
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="app-card-body">
+          <p class="app-description">Enjoy unlimited streaming of premium movies, TV shows, and exclusive content. IonFlix Lite brings entertainment to your fingertips with a sleek interface and personalized recommendations in a lighter package.</p>
+          
+          <div class="app-features">
+            <span class="feature-tag"><i class="fas fa-feather-alt"></i> Lightweight</span>
+            <span class="feature-tag"><i class="fas fa-video"></i> HD Streaming</span>
+            <span class="feature-tag"><i class="fas fa-battery-three-quarters"></i> Battery Efficient</span>
+          </div>
+          
+          <div class="app-meta">
+            <div class="app-rating" data-rating="4.5"></div>
+            <div class="app-size">34 MB</div>
+            <div class="app-downloads">12.8K downloads</div>
+          </div>
+          
+          <div class="app-actions-bar">
+            <a href="https://drive.google.com/file/d/1WjbLbXLC1Z2tYDap9_HHWkc7x4rUZmLC/view?usp=sharing" class="btn download-btn" data-app="ionflix-lite">
+              <i class="fas fa-download"></i> Download
+            </a>
+            <button class="btn-secondary details-btn" data-app="ionflix-lite">
+              <i class="fas fa-info-circle"></i> Details
+            </button>
+          </div>
+          
+          <div class="download-progress" style="display: none;">
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="progress-text">Preparing download...</span>
+          </div>
         </div>
       </div>
 
@@ -277,8 +531,415 @@
             <div class="app-size">18 MB</div>
           </div>
           <a href="https://drive.google.com/file/d/1l2IEYwC4wTCwQ6M7iN-k2Oj8dL63rAMA/view?usp=sharing" download class="btn">Download</a>
+        </div>
+      </div>
+      </div>
     </section>
+    
+    <!-- Load More Button -->
+    <div class="load-more-section" style="display: none;">
+      <button class="btn load-more-btn">
+        <i class="fas fa-plus"></i> Load More Apps
+      </button>
+    </div>
   </main>
+
+  <!-- Update Notification Modal -->
+  <div class="modal" id="update-notification-modal" style="display: none;">
+    <div class="modal-content update-modal">
+      <div class="modal-header">
+        <h3><i class="fas fa-gift"></i> New Update Available!</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="update-notification-content">
+          <div class="update-illustration">
+            <div class="update-icon-large">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <div class="sparkles">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          
+          <div class="update-details">
+            <h4>Ion App Store 2.0 is here!</h4>
+            <p>Experience our biggest update yet with enhanced search, dark mode, and improved mobile experience.</p>
+            
+            <div class="update-highlights">
+              <div class="highlight-item">
+                <i class="fas fa-search"></i>
+                <span>Smart Search</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-moon"></i>
+                <span>Dark Mode</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile First</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="update-actions">
+            <button class="btn update-now-btn">
+              <i class="fas fa-download"></i> Experience Now
+            </button>
+            <button class="btn-secondary view-changelog-btn">
+              <i class="fas fa-list"></i> View Changelog
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Version History Modal -->
+  <div class="modal" id="version-history-modal" style="display: none;">
+    <div class="modal-content large">
+      <div class="modal-header">
+        <h3><i class="fas fa-history"></i> Version History</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="version-history-content">
+          <div class="version-entry current">
+            <div class="version-header">
+              <div class="version-info">
+                <h4>Version 2.0.0</h4>
+                <span class="version-date">December 15, 2024</span>
+                <span class="version-status current">Current</span>
+              </div>
+              <div class="version-size">Major Update</div>
+            </div>
+            <div class="version-content">
+              <h5><i class="fas fa-star"></i> Complete Redesign & New Features</h5>
+              <ul>
+                <li><i class="fas fa-magic"></i> Enhanced search with auto-suggestions and search history</li>
+                <li><i class="fas fa-moon"></i> Dark mode support with smooth transitions</li>
+                <li><i class="fas fa-mobile-alt"></i> Completely redesigned mobile experience</li>
+                <li><i class="fas fa-bullseye"></i> Advanced filtering and sorting options</li>
+                <li><i class="fas fa-chart-line"></i> Download progress tracking</li>
+                <li><i class="fas fa-rocket"></i> Improved performance and animations</li>
+                <li>🔗 Easy app sharing functionality</li>
+                <li><i class="fas fa-palette"></i> Modern glassmorphism design</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="version-entry">
+            <div class="version-header">
+              <div class="version-info">
+                <h4>Version 1.9.1</h4>
+                <span class="version-date">November 28, 2024</span>
+              </div>
+              <div class="version-size">Bug Fix</div>
+            </div>
+            <div class="version-content">
+              <h5><i class="fas fa-bug"></i> Bug Fixes & Improvements</h5>
+              <ul>
+                <li>Fixed search functionality issues</li>
+                <li>Improved app card loading performance</li>
+                <li>Fixed rating display on some devices</li>
+                <li>Minor UI improvements</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="version-entry">
+            <div class="version-header">
+              <div class="version-info">
+                <h4>Version 1.9.0</h4>
+                <span class="version-date">November 15, 2024</span>
+              </div>
+              <div class="version-size">Security Update</div>
+            </div>
+            <div class="version-content">
+              <h5><i class="fas fa-shield-alt"></i> Security & Stability</h5>
+              <ul>
+                <li>Enhanced security measures</li>
+                <li>Improved download verification</li>
+                <li>Better error handling</li>
+                <li>Performance optimizations</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="version-entry">
+            <div class="version-header">
+              <div class="version-info">
+                <h4>Version 1.8.0</h4>
+                <span class="version-date">October 30, 2024</span>
+              </div>
+              <div class="version-size">Feature Update</div>
+            </div>
+            <div class="version-content">
+              <h5><i class="fas fa-bullseye"></i> New Features</h5>
+              <ul>
+                <li>Added app categories</li>
+                <li>Improved app descriptions</li>
+                <li>Better responsive design</li>
+                <li>New app icons</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Panel Modal -->
+  <div class="modal" id="admin-panel-modal" style="display: none;">
+    <div class="modal-content large admin-panel">
+      <div class="modal-header">
+        <h3><i class="fas fa-shield-alt"></i> Admin Panel</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="admin-content">
+          <!-- Admin Tabs -->
+          <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="analytics">Analytics</button>
+            <button class="admin-tab" data-tab="apps">App Management</button>
+            <button class="admin-tab" data-tab="system">System</button>
+          </div>
+          
+          <!-- Analytics Tab -->
+          <div class="admin-tab-content" id="analytics-tab">
+            <div class="analytics-grid">
+              <div class="analytics-card">
+                <div class="analytics-header">
+                  <h4>Store Overview</h4>
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="analytics-stats">
+                  <div class="stat-item">
+                    <span class="stat-number" id="total-apps-admin">0</span>
+                    <span class="stat-label">Total Apps</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number" id="total-downloads">127K</span>
+                    <span class="stat-label">Total Downloads</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number" id="avg-rating">4.3</span>
+                    <span class="stat-label">Avg Rating</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="analytics-card">
+                <div class="analytics-header">
+                  <h4>Popular Categories</h4>
+                  <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="category-stats">
+                  <div class="category-stat">
+                    <span class="category-name">Entertainment</span>
+                    <div class="category-bar">
+                      <div class="category-fill" style="width: 40%;"></div>
+                    </div>
+                    <span class="category-percent">40%</span>
+                  </div>
+                  <div class="category-stat">
+                    <span class="category-name">Christian</span>
+                    <div class="category-bar">
+                      <div class="category-fill" style="width: 35%;"></div>
+                    </div>
+                    <span class="category-percent">35%</span>
+                  </div>
+                  <div class="category-stat">
+                    <span class="category-name">Productivity</span>
+                    <div class="category-bar">
+                      <div class="category-fill" style="width: 15%;"></div>
+                    </div>
+                    <span class="category-percent">15%</span>
+                  </div>
+                  <div class="category-stat">
+                    <span class="category-name">Others</span>
+                    <div class="category-bar">
+                      <div class="category-fill" style="width: 10%;"></div>
+                    </div>
+                    <span class="category-percent">10%</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="analytics-card">
+                <div class="analytics-header">
+                  <h4>Recent Activity</h4>
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="activity-list">
+                  <div class="activity-item">
+                    <div class="activity-icon success">
+                      <i class="fas fa-download"></i>
+                    </div>
+                    <div class="activity-content">
+                      <span class="activity-text">IonFlix Beta downloaded</span>
+                      <span class="activity-time">2 minutes ago</span>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-icon info">
+                      <i class="fas fa-search"></i>
+                    </div>
+                    <div class="activity-content">
+                      <span class="activity-text">Search: "entertainment apps"</span>
+                      <span class="activity-time">5 minutes ago</span>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <div class="activity-icon warning">
+                      <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="activity-content">
+                      <span class="activity-text">App shared: Freedom Experience</span>
+                      <span class="activity-time">8 minutes ago</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- App Management Tab -->
+          <div class="admin-tab-content" id="apps-tab" style="display: none;">
+            <div class="app-management">
+              <div class="management-header">
+                <h4>App Management</h4>
+                <button class="btn add-app-btn">
+                  <i class="fas fa-plus"></i> Add New App
+                </button>
+              </div>
+              
+              <div class="apps-table">
+                <div class="table-header">
+                  <span>App</span>
+                  <span>Category</span>
+                  <span>Downloads</span>
+                  <span>Rating</span>
+                  <span>Status</span>
+                  <span>Actions</span>
+                </div>
+                <div class="table-body" id="admin-apps-list">
+                  <!-- Apps will be populated by JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- System Tab -->
+          <div class="admin-tab-content" id="system-tab" style="display: none;">
+            <div class="system-info">
+              <div class="system-card">
+                <h4>System Information</h4>
+                <div class="system-stats">
+                  <div class="system-stat">
+                    <span class="system-label">Store Version:</span>
+                    <span class="system-value">2.0.0</span>
+                  </div>
+                  <div class="system-stat">
+                    <span class="system-label">Last Updated:</span>
+                    <span class="system-value">December 15, 2024</span>
+                  </div>
+                  <div class="system-stat">
+                    <span class="system-label">Theme:</span>
+                    <span class="system-value" id="current-theme">Light</span>
+                  </div>
+                  <div class="system-stat">
+                    <span class="system-label">Performance:</span>
+                    <span class="system-value status-good">Excellent</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="system-actions">
+                <button class="btn-secondary clear-cache-btn">
+                  <i class="fas fa-trash"></i> Clear Cache
+                </button>
+                <button class="btn-secondary export-data-btn">
+                  <i class="fas fa-download"></i> Export Data
+                </button>
+                <button class="btn-secondary reset-settings-btn">
+                  <i class="fas fa-undo"></i> Reset Settings
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Info Modal -->
+  <div class="modal" id="info-modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Ion App Store 2.0</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="info-content">
+          <div class="feature-highlight">
+            <i class="fas fa-rocket"></i>
+            <h4>What's New in 2.0</h4>
+            <ul>
+              <li><i class="fas fa-search"></i> Enhanced search with auto-suggestions</li>
+              <li><i class="fas fa-moon"></i> Dark mode support</li>
+              <li><i class="fas fa-filter"></i> Advanced filtering options</li>
+              <li><i class="fas fa-mobile-alt"></i> Improved mobile experience</li>
+              <li><i class="fas fa-share-alt"></i> Easy app sharing</li>
+              <li><i class="fas fa-download"></i> Download progress tracking</li>
+            </ul>
+          </div>
+          
+          <div class="stats-section">
+            <h4>Store Statistics</h4>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number" id="total-apps">0</span>
+                <span class="stat-label">Total Apps</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Categories</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">2.0</span>
+                <span class="stat-label">Version</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-info">
+            <h4>Contact & Support</h4>
+            <p>For questions or support, please contact Ion Hosting Digital Services.</p>
+            <div class="contact-links">
+              <a href="#" class="contact-link"><i class="fas fa-envelope"></i> Email Support</a>
+              <a href="#" class="contact-link"><i class="fas fa-globe"></i> Visit Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Detail Modal -->
+  <div class="modal" id="app-detail-modal" style="display: none;">
+    <div class="modal-content large">
+      <div class="modal-header">
+        <h3 class="app-detail-title">App Details</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="app-detail-content">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="footer-content">
